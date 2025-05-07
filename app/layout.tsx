@@ -5,6 +5,7 @@ import { Navbar } from "@/client-components/navbar/navbar.component";
 import Link from "next/link";
 import AuthorizationService from "@/services/authorization-service/authorization-service";
 import UserBox from "@/server-components/user-box/userbox.component";
+import QueryWrapper from "@/client-components/query-wrapper/query-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +33,16 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
-        <Navbar>
-          <h1 className="text-2xl font-bold">Noted!</h1>
-          <UserBox />
-        </Navbar>
-        <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-100">
-          {children}
-        </div>
+        >
+          <QueryWrapper>
+            <Navbar>
+              <h1 className="text-2xl font-bold">Noted!</h1>
+              <UserBox />
+            </Navbar>
+            <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-100">
+              {children}
+            </div>
+          </QueryWrapper>
       </body>
     </html>
   );
