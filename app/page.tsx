@@ -1,9 +1,13 @@
 "use client"
-import { useRouter } from "next/navigation";
+
+import EntityList from "@/components/EntityList/Entitylist.component";
 
 export default function Home() {
-  const router = useRouter();
-  
-  router.push("/home");
-  return null;
+  return (
+    <EntityList>
+      <div>
+        <p>blog1</p>
+      </div>
+    </EntityList>
+  );
 }

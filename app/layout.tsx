@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar/navbar.component";
+import Link from "next/link";
+import AuthorizationService from "@/services/authorization-service/authorization-service";
+import UserBox from "@/components/user-box/userbox.component";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +22,25 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) 
+{
+  const Auth: AuthorizationService = new AuthorizationService();
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        {children}
+        <Navbar>
+          <h1 className="text-2xl font-bold">Noted!</h1>
+          <UserBox />
+        </Navbar>
+        <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-100">
+          {children}
+        </div>
       </body>
     </html>
   );

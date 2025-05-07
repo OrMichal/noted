@@ -18,11 +18,11 @@ export default class DataService{
     }
 
     public GetAllItems() : Record<string, any> {
-        return sessionStorage;
+        return  sessionStorage;
     }
 
     public GetAllKeys() : string[] {
-        return Object.keys(sessionStorage);
+        return Object.keys( sessionStorage);
     }
 
     public GetAllValues() : any {
