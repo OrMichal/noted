@@ -1,6 +1,6 @@
 "use client"
 
-import EntityList from "@/components/EntityList/Entitylist.component";
+import EntityList from "@/client-components/EntityList/Entitylist.component";
 
 export default function Home() {
   return (

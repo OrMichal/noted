@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/navbar.component";
+import { Navbar } from "@/client-components/navbar/navbar.component";
 import Link from "next/link";
 import AuthorizationService from "@/services/authorization-service/authorization-service";
-import UserBox from "@/components/user-box/userbox.component";
+import UserBox from "@/server-components/user-box/userbox.component";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,11 +22,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children,
-  }: Readonly<{
-    children: React.ReactNode;
-  }>) 
-{
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   const Auth: AuthorizationService = new AuthorizationService();
 
   return (

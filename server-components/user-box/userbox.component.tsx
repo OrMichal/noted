@@ -1,10 +1,9 @@
-"use client"
-import User from "@/interfaces/user";
+import User from "@/interfaces/entity/user";
 import AuthorizationService from "@/services/authorization-service/authorization-service";
 import DataService from "@/services/data-service/data-service";
 import Link from "next/link";
 
-export default function UserBox() {
+export default async function UserBox() {
     const dataService: DataService = new DataService();
     const User: User = dataService.GetItems(["id", "firstname", "surname"]) as User;
     const Auth: AuthorizationService = new AuthorizationService();
