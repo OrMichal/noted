@@ -4,8 +4,9 @@ import "./globals.css";
 import { Navbar } from "@/client-components/navbar/navbar.component";
 import Link from "next/link";
 import AuthorizationService from "@/services/authorization-service/authorization-service";
-import UserBox from "@/server-components/user-box/userbox.component";
+import UserBox from "@/client-components/user-box/userbox.component";
 import QueryWrapper from "@/client-components/query-wrapper/query-wrapper";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,20 +28,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const Auth: AuthorizationService = new AuthorizationService();
-
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased h-dvh`}
         >
           <QueryWrapper>
             <Navbar>
               <h1 className="text-2xl font-bold">Noted!</h1>
+              <Link href={"/questions"} >Otázky</Link>
               <UserBox />
             </Navbar>
-            <div className="flex flex-col items-center justify-center w-full h-full p-4 bg-gray-100">
+            <div className="flex flex-col items-center justify-start pt-20 w-full h-full p-4 bg-gray-100">
               {children}
+              <Toaster position="top-center" />
             </div>
           </QueryWrapper>
       </body>

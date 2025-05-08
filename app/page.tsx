@@ -1,13 +1,10 @@
-"use client"
-
-import EntityList from "@/client-components/EntityList/Entitylist.component";
+import QuestionList from "@/server-components/Question-list/question-list";
 
 export default function Home() {
   return (
-    <EntityList>
-      <div>
-        <p>blog1</p>
-      </div>
-    </EntityList>
+    <div>
+      <h2 className=" text-black ">Otázky</h2>
+      <QuestionList />
+    </div>
   );
 }
