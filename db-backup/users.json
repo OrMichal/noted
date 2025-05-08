@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "681d07d1f901ba3a717f8209"
+  },
+  "username": "ivanSer",
+  "firstname": "Ivan",
+  "lastname": "Sergejovič",
+  "email": "ivanser@gmail.com",
+  "password": "$2b$20$WbulIcNYCFiMleGasArZP.GFyVK9WIbQizyR/FzqF1jeBAOAQtHmS",
+  "question_ids": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681d0bfff901ba3a717f822f"
+  },
+  "username": "doeJohn",
+  "firstname": "John",
+  "lastname": "Doe",
+  "email": "doejohn@gmail.com",
+  "password": "$2b$20$DjwF234hj0njbF.5cuK1V.u4XySBvu9YHj6L3sADFWQUq2JB7IILq",
+  "question_ids": [],
+  "__v": 0
+}]

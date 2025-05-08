@@ -1,8 +1,8 @@
 import { Schema } from "mongoose";
 
 export default interface QuestionEntity{
-    _id: Schema.Types.ObjectId,
-    author_id: Schema.Types.ObjectId,
+    _id?: string,
+    author_id: string,
     title: String ,
     tags: String[],
     content: String,

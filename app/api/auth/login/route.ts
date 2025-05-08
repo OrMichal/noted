@@ -1,9 +1,10 @@
 import { MongoConnect } from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { JWTcreateToken } from "@/services/Database-service/jwt-service";
-import { GetUserByUsername } from "@/services/Database-service/database-service";
+import { GetUserByUsername } from "@/services/Database-service/table-services/User-service";
 import { GetUserDTO } from "@/services/Database-service/DTO-service";
 import { cookies } from "next/headers";
+import { CompareEncrypted } from "@/services/Database-service/cypher-service";
 
 export async function POST(req: NextRequest) {
     try {
@@ -17,7 +18,9 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ message: "Username or password is incorrect 1" }, { status: 400 });
         }
 
-        if(_user.password != password){
+        const correctPassword = await CompareEncrypted(String(_user.password), password);
+
+        if(!correctPassword){
             return NextResponse.json({message: "Username or password is incorrect"}, { status: 400 });
         }
 

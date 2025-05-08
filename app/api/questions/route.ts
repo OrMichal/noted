@@ -1,5 +1,5 @@
 import { MongoConnect } from "@/lib/mongodb";
-import { GetAllQuestions } from "@/services/Database-service/database-service";
+import { GetAllQuestions } from "@/services/Database-service/table-services/Question-service";
 import { NextResponse } from "next/server";
 
 export async function GET(){

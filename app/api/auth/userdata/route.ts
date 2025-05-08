@@ -2,7 +2,7 @@ import UserEntity from "@/interfaces/entity/user";
 import { MongoConnect } from "@/lib/mongodb";
 import { JWTgetUserId } from "@/services/Database-service/jwt-service";
 import { NextRequest, NextResponse } from "next/server";
-import { GetUserById } from "@/services/Database-service/database-service";
+import { GetUserById } from "@/services/Database-service/table-services/User-service";
 import { GetUserDTO } from "@/services/Database-service/DTO-service";
 import { cookies } from "next/headers";
 

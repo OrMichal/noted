@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "681d0c45f901ba3a717f8236"
+  },
+  "author_id": {
+    "$oid": "681d0bfff901ba3a717f822f"
+  },
+  "title": "Mám problém s javascript proměnnými",
+  "tags": [
+    "Javascript"
+  ],
+  "content": "Už dlouho se potýkám s dilematem, kdy použít var a kdy let.",
+  "created_at": {
+    "$date": "2025-05-08T19:55:49.885Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681d134df901ba3a717f82a4"
+  },
+  "author_id": {
+    "$oid": "681d07d1f901ba3a717f8209"
+  },
+  "title": "hhh",
+  "tags": [
+    "Javascript",
+    "NextJs",
+    "ReactJs"
+  ],
+  "content": "69",
+  "created_at": {
+    "$date": "2025-05-08T20:25:49.520Z"
+  },
+  "__v": 0
+}]

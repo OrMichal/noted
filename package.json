@@ -14,11 +14,13 @@
     "date-fns": "^4.1.0",
     "dotenv": "^16.5.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.508.0",
     "mongoose": "^8.14.1",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.2"
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -7,6 +7,7 @@ import AuthorizationService from "@/services/authorization-service/authorization
 import UserBox from "@/client-components/user-box/userbox.component";
 import QueryWrapper from "@/client-components/query-wrapper/query-wrapper";
 import { Toaster } from "react-hot-toast";
+import { FaHome, FaQuestionCircle } from "react-icons/fa";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,18 +33,31 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-dvh`}
-        >
-          <QueryWrapper>
-            <Navbar>
-              <h1 className="text-2xl font-bold">Noted!</h1>
-              <Link href={"/questions"} >Otázky</Link>
+      >
+        <QueryWrapper>
+          <Navbar>
+            <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">Noted!</h1>
+            <div className="flex gap-10 items-center text-gray-800 dark:text-gray-100 text-lg">
+              <Link
+                href="/"
+                className="flex items-center gap-2 hover:text-indigo-500 transition"
+              >
+                <FaHome /> Domů
+              </Link>
+              <Link
+                href="/questions"
+                className="flex items-center gap-2 hover:text-indigo-500 transition"
+              >
+                <FaQuestionCircle /> Otázky
+              </Link>
               <UserBox />
-            </Navbar>
-            <div className="flex flex-col items-center justify-start pt-20 w-full h-full p-4 bg-gray-100">
-              {children}
-              <Toaster position="top-center" />
             </div>
-          </QueryWrapper>
+          </Navbar>
+          <div className="flex flex-col items-center justify-start pt-13 w-full h-full p-4 bg-gray-100">
+            {children}
+            <Toaster position="top-center" />
+          </div>
+        </QueryWrapper>
       </body>
     </html>
   );
